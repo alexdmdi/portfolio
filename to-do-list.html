@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <script src="to-do.js"></script>
+</head>
+
+
+<body class="text-white">  
+    
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Portfolio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto me-5">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="API-fun.html">Fun With API</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="to-do-list.html">To-do-list</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="hobbies.html">Hobbies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact Me!</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+      
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-1 col-lg-3 col-xl-3 col-xxl-3"></div>
+            
+            <div class="col-md-10 col-lg-6 col-xl-6 col-xxl-6">
+                <div class="container-md main">
+                    <h1 class="text-center">To-Do List</h1><br>
+                
+                    <form>  <!--must wrap everything in form tag-->
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-10">
+                            <input class="form-control" id="inputText" type="text" placeholder="To-do">    <!--input area-->
+                          </div>
+                          <div class="col-2">
+                            <button class="btn" type="submit" id="submitBtn">Submit</button>   <!--button-->
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </form>
+                    
+                    </div>
+                    <br>
+                    <hr>
+                    <ul class="list-group" id="entryList">  
+                        
+                        <!-- sample list item:-->
+                        <!-- <li class="list-group-item list-group-item-action d-flex list-group-item-secondary">
+                            <input class="form-check-input me-2" type="checkbox" aria-label="an entry in the list">
+                            <label class="flex-grow-1">item 1</label>
+                            <button type="button" class="btn-close" aria-label="Close"></button>
+                        </li>  -->
+                        
+                        <!-- entries will be formed here on submission by to-do.js -->
+        
+                    </ul>
+        
+            </div>
+                
+        <div class="col-md-1 col-lg-3 col-xl-3 col-xxl-3"></div>
+        </div>
+            
+    </div>
+>
+    
+</body>
+
+
+</html>
