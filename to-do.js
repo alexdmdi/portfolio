@@ -1,9 +1,7 @@
 "use strict"; //The code is to be executed in strict mode
 
-/*const toDoArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : []; 
-toDoArray.forEach(item => {addToDo(item)}); */
-
-//Wrapping code in this helps prevent: Cannot read property 'addEventListener' null type of error
+/*Wrapping code in this helps prevent: Cannot read property 'addEventListener' null type of error although it 
+should work fine without it in this case due to the defer attribute added to the script tag in to-do-list.html */
 document.addEventListener('DOMContentLoaded', () => {  
     
   
@@ -33,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Adds event listener to the submit button
     submitBtn.addEventListener('click', (event) => {
-      event.preventDefault();  //prevents the page from refreshing
+      event.preventDefault();  //prevents the page from refreshing on submit
       addToDo();
     });
 
@@ -48,9 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
           const label = document.createElement('label');
           const textValueNode = document.createTextNode(inputText.value.trim());
           const closeButton = document.createElement('button');
-
-          /*toDoArray.push(textValueNode);*/
-          /*localStorage.setItem('items', JSON.stringify(toDoArray));*/
 
           //sets attributes for the checkbox
           checkbox.setAttribute('type', 'checkbox');
