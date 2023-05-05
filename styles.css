@@ -4,6 +4,18 @@ nav {
     
 }
 
+.card {
+    color: white;
+    border-color:black;
+    background-color: rgb(44, 37, 80); 
+}
+
+.list-group-item {
+    color: white;
+    border-color:black;
+    background-color: rgb(88, 81, 126);
+}
+
 #to-do-list-item {
     background-color: rgb(139, 136, 182);
     color:rgb(0, 0, 0);
