@@ -31,7 +31,7 @@ async function getQuote() {
         const result = await response.json();
         quoteText.setAttribute ('style', 'color: white;');
         quoteText.setAttribute ('class', 'fw-medium fs-5 text-center');
-        quoteText.innerHTML = ('"' + result[randomNum].text + '" - ' + result[randomNum].author);
+        quoteText.innerHTML = ('"' + (result[randomNum].text) + '" - ' + (result[randomNum].author === null ? 'Unknown' : result[randomNum].author));
     } 
     catch (error) {
         console.error(error);
@@ -39,7 +39,3 @@ async function getQuote() {
 
 }
     
-    
-            
-
-
