@@ -4,16 +4,30 @@ nav {
     
 }
 
+.fade-in {
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.card-images {
+    aspect-ratio: 1.5;
+    object-fit:cover;
+}
+
 .card {
     color: white;
     border-color:black;
-    background-color: rgb(44, 37, 80); 
+    background-color: rgb(66, 58, 105); 
 }
 
 .list-group-item {
     color: white;
     border-color:black;
-    background-color: rgb(88, 81, 126);
+    background-color: rgb(97, 91, 129);
 }
 
 #to-do-list-item {
