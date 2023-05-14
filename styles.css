@@ -21,13 +21,13 @@ nav {
 
 .card {
     color: white;
-    border-color:black;
     background-color: rgb(66, 58, 105); 
+    transition: 0.2s;
 }
 
 .card:hover {
     background-color: rgb(73, 63, 119); 
-    border:white;
+    border-color: transparent;
 }
 
 .list-group-item {
