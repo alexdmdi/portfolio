@@ -13,6 +13,7 @@ nav {
     100% { opacity: 1; }
 }
 
+
 .card-images {
     aspect-ratio: 1.5;
     object-fit:cover;
@@ -22,6 +23,11 @@ nav {
     color: white;
     border-color:black;
     background-color: rgb(66, 58, 105); 
+}
+
+.card:hover {
+    background-color: rgb(73, 63, 119); 
+    border:white;
 }
 
 .list-group-item {
