@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Weather App">
+    <title>Weather App</title>
+    
+    <!--Bootstrap CDN links for CSS and JS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+    <script defer src="https://kit.fontawesome.com/af70293d5a.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="bootstrap-breakpoints.css"> -->
+    
+</head>
+
+<style>
+  body {
+    background-color:rgb(28, 44, 53) !important;
+  }
+</style>
+
+<body class="text-white">  
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black mb-4">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">alexdiamandi.com</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto me-5">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link href active"href="Weather-app.html">Weather App</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="API-fun.html">Fun With API</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="to-do-list.html">To-do-list</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="hobbies.html">Hobbies</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+ 
+  <br>
+
+  <main>
+    
+    <div class="container-md-fluid ps-3 pe-3 weather-body ">
+      
+      <div class="row text-center mb-0 mt-1 githubLink">
+        
+          <a href="https://alexdmdi.github.io/weather-app/" class="display-6 text-center mb-5 text-decoration-none text-light gihubLink ">alexdmdi.github.io/weather-app</a>
+          
+
+      </div>
+      <div class="row pb-5">
+        
+        <div class="col text-center">
+          <a href="https://alexdmdi.github.io/weather-app/">
+            <img src="images/weather-app/weather-app img.png" class="weather-img p-0 mb-1 img-fluid" alt="weather app showcase">
+          </a>
+        </div> 
+   
+      </div> 
+
+      <div class="row pb-5">
+        <div class="col"></div>
+
+        <div class="col-md-10 col-lg-10 col-xl-6 weather-textBody pt-3 pb-3">
+          <p class = "fs-3 mb-0 text-info">
+            Overview
+          </p>
+          <br>
+          <p class="mb-5 bg-dark p-3">
+            This is a react-vite typescript project that fetches weather data from a free API (openweathermap.org). By default the page sets the location to 
+            the nearest locale based on the users approximate coordinates, which are fetched from ipapi (https://ipapi.co/json). 
+            The theme changes based on the set location and whether or not it is day time there, based on sunset and sunrise.
+          </p>
+
+          <p class = "fs-3 mb-2 text-info">
+            Experience gained
+          </p>
+          
+          <ul class="mb-5 list-group list-group-flush">
+            <li class="list-group-item">-Common React hooks </li>
+            <li class="list-group-item">-Passing information throughout the react component hierarchy with props and functions</li>
+            <li class="list-group-item">-Conditional rendering and styling</li>
+            <li class="list-group-item">-Lazy loading with react suspense to optimize loading time</li>
+            <li class="list-group-item">-Typescript: setting up interfaces, defining types, etc </li>
+            <li class="list-group-item">-Async/await, fetch, promises</li>
+            <li class="list-group-item">-A lot of experience with native javascript Date objects and methods</li>
+            <li class="list-group-item">-Common javascript functions such as .map, .filter </li>
+            <li class="list-group-item">-Node package manager and certain packages such as 'date-and-time' </li>
+            <li class="list-group-item">-Environment Variables and testing/build configurations </li>
+            <li class="list-group-item">-Bootstrap and CSS </li>
+            <li class="list-group-item">-Parsing through and sorting data from API responses</li>
+          </ul>
+
+          <p class = "fs-3 mb-0 text-info">
+            Challenges
+          </p>
+          <br>
+          
+          <p class="mb-5 bg-dark p-3">
+            I had countless challenges throughout this project that forced me to think analytically and research for hours. Here are three major challenges:
+            <br><br>
+            1.Early on I had to consider which variation of the weather API should I call, and how. This tied in with the search bar functionality. 
+            I found and used a large object list from openweathermap containing all the cities in the world along with their associated country, ID, and coordinates. The file was big at first, so big that it 
+            was making visual studio code slow down, and it caused long loading times for the page during developement testing. I cut down the file size in half by 
+            removing some white space, and the coordinates data for each location. I used react suspense for the component to optimize page load times further. 
+            The search bar would still take a few seconds on first load which better but not ideal. In the final build it was automatically optimized further so it's fine in the end. 
+            The searchbar displays search results dynamically as the user types, and when the user selects a location, the value is set and must get passed to other primary components. As for the API calls, I found a solution 
+            that conditionally builds the URL string to fetch and update weather/forecast data either through coordinates (occurs on page load/refresh), or through a unique location ID from the large locations object,
+            for whenever the search bar is used. At some point I was struggling with useEffect and ensuring the right things update at the right time, in parallel, but after some re-arranging and conditional logic, it was solved.
+            <br><br>
+            Another major challenge I had was dealing with the raw reponse data, especially from the forecast fetch. Each response contains an array with 40 objects, that are not organized by day, and each following item represents 
+            the weather data for 3 hours later, from the previous object. Each day has about 8 object array items which then need to be sorted each time into another object that dynamically updates every day, to hold the dates for whatever the
+            following 5 days are. The the date given for each of the 40 list items is either in the form of epoch time (seconds ellapsed since epoch 1970 Jan 1 UTC+0), or in the form of a UTC date string, so this complicated things that much more.
+            I had to figure out how to convert to local time, considering the respective time zone for selected locations, regardless of the users current location and time zone. Each time a new Date object is initiated, it gets the current date and time 
+            based on the users browser and their location. I had to do a lot of conversion that considers both the users timezone offset from UTC, and the offset between UTC and the selected location. This was needed for the process of iterating through the 
+            response array, in order to populate the "followingDays" object I created, that contains 5 keys representing the following 5 days based on whatever the current day isWhen displaying the current time (or sunset/sunrise) for the 
+            time zone of the selected location, it required similar conversions as well. 
+            <br><br>
+            Figuring out the conditional day/night styling on each render/load was harder than expected. <br> The solution: Each time a location is selected, starting with the default, which is the users current approximate location,
+            there is a check that sets a boolean true or false depending on the time of day there. If the current time is after sunrise but before sunset, the useState boolean is set to true,
+            whose value is also passed to the app.tsx file. If it's set to true true, then the regular day theme styling is set, otherwise the night theme and background is set for that location. I couldn't figure out how to conditionally 
+            import and apply css files with react, so instead I found a different solution. For both themes, I made regular javascript/tsx files that hold the associated css properties as large string literals, in constants. 
+            Those consts are imported into app.tsx and then based on the theme boolean value, are passed into the in-file style tag, as the first thing in the return statement 
+            for app.tsx. This seemed to have finally worked.
+            <br><br>
+
+          </p>
+      
+          <p class = "fs-3 mb-2 text-warning">
+            Weather Image sources
+          </p>
+          
+          <p class="mb-1">
+            Day time background:
+            <div>
+              Image by Stanislav Kondratiev: <a href="https://www.pexels.com/photo/photo-of-a-blue-sky-with-white-clouds-2908983" class="text-light">Source</a>
+
+            </div>
+            <br>
+            
+            Night time background:
+            <div>
+              Image from wallpaperlflare.com: <a href="https://www.wallpaperflare.com/sky-stars-night-cloudy-star-space-astronomy-nature-wallpaper-waays" class="text-light">Source</a>
+
+            </div>
+            <br>
+
+            Favicon (tab icon):
+            <div>
+              Image from icons8.com: <a href="https://icons8.com/icon/8EUmYhfLPTCF/sun" class="text-light">Source</a>
+
+            </div>
+          </p>
+
+        </div>
+
+        <div class="col"></div>
+
+      </div>
+     
+    </div>
+
+
+  </main>
+    
+    
+  <footer class="mt-5"></footer>
+    
+</body>
+
+</html>
+
