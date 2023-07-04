@@ -89,9 +89,9 @@
           </p>
           <br>
           <p class="mb-5 bg-dark p-3">
-            This is a react-vite typescript project that fetches weather data from a free API (openweathermap.org). By default the page sets the location to 
-            the nearest locale based on the users approximate coordinates, which are fetched from ipapi (https://ipapi.co/json). 
-            The theme changes based on the set location and whether or not it is day time there, based on sunset and sunrise.
+            This is a react-vite typescript project that fetches weather data from a free API (openweathermap.org). By default the page is set
+            to the users location based on their approximate coordinates, which are fetched from ipapi (https://ipapi.co/json). 
+            The theme is set based on the set location, and if the sun is still up there.
           </p>
 
           <p class = "fs-3 mb-2 text-info">
@@ -121,29 +121,30 @@
           <p class="mb-5 bg-dark p-3">
             I had countless challenges throughout this project that forced me to think analytically and research for hours. Here are three major challenges:
             <br><br>
-            Early on I had to consider which variation of the weather API should I call, and how. This tied in with the search bar functionality. 
-            I found and used a large object list from openweathermap containing all the cities in the world along with their associated country, ID, and coordinates. The file was big at first, so big that it 
-            was making visual studio code slow down, and it caused long loading times for the page during developement testing. I cut down the file size in half by 
-            removing some white space, and the coordinates data for each location. I used react suspense for the component to optimize page load times further. 
-            The search bar would still take a few seconds on first load which better but not ideal. In the final build it was automatically optimized further so it's fine in the end. 
-            The searchbar displays search results dynamically as the user types, and when the user selects a location, the value is set and must get passed to other primary components. As for the API calls, I found a solution 
-            that conditionally builds the URL string to fetch and update weather/forecast data either through coordinates (occurs on page load/refresh), or through a unique location ID from the large locations object,
-            for whenever the search bar is used. At some point I was struggling with useEffect and ensuring the right things update at the right time, in parallel, but after some re-arranging and conditional logic, it was solved.
+            Early on I had to consider which variation of the weather API to call, and how. This tied in with the search bar functionality. 
+            I used a large object list provided by openweathermap containing all the cities in the world, along with their associated country, ID, and coordinates. The file was big at first, so big that it caused lag, and 
+            long loading times for the page during development. I cut down the file size in half by removing some white space, and the coordinate data 
+            for each location. I further optimized the search bar component by having it load with react suspense. The search bar would still take a few seconds to be ready on initial 
+            load, but in the final build it was automatically optimized further to the point where it is now near instant. The search bar displays search results dynamically 
+            as the user types. When the user selects a location, the value is set and gets passed to other components. As for the API calls, I found a solution that conditionally 
+            builds a URL string to fetch and update both weather and forecast data, either with coordinates (occurs on page load/refresh), or through a unique location ID from the 
+            large locations object. At some point I was struggling with useEffect and ensuring that the right components update and re-render at the right time, in parallel, 
+            but after some modifications and adding conditional logic, I solved the issue.
             <br><br>
-            Another major challenge I had was dealing with the raw reponse data, especially from the forecast fetch. Each response contains an array with 40 objects, that are not organized by day, and each following item represents 
-            the weather data for 3 hours later, from the previous object. Each day has about 8 object array items which then need to be sorted each time into another object that dynamically updates every day, to hold the dates for whatever the
-            following 5 days are. The the date given for each of the 40 list items is either in the form of epoch time (seconds ellapsed since epoch 1970 Jan 1 UTC+0), or in the form of a UTC date string, so this complicated things that much more.
-            I had to figure out how to convert to local time, considering the respective time zone for selected locations, regardless of the users current location and time zone. Each time a new Date object is initiated, it gets the current date and time 
-            based on the users browser and their location. I had to do a lot of conversion that considers both the users timezone offset from UTC, and the offset between UTC and the selected location. This was needed for the process of iterating through the 
-            response array, in order to populate the "followingDays" object I created, that contains 5 keys representing the following 5 days based on whatever the current day isWhen displaying the current time (or sunset/sunrise) for the 
-            time zone of the selected location, it required similar conversions as well. 
+            Another major challenge I had, was dealing with the raw response data, especially for the forecast data. Each response contains an array with 40 weather objects, that are not 
+            categorized by day. Each next array item represents forecast data 3 hours into the future after the previous. Each day has about 8 object array items which then need to be 
+            sorted into another object that has 5 nested objects in it, one for each of the following 5 days, and whose date values need to update dynamically. The date provided in 
+            each of the 40 list items, is either in the form of epoch time (seconds elapsed since epoch 1970 Jan 1 UTC+0), or in the form of a UTC date string, so this complicated things 
+            that much more. The response object does not have a constant pattern/format to it, otherwise I could have just always taken the first 8 array items for example, and push them to the object representing tomorrow, within the 
+            followingDays object. Anyway, I had to figure out how to convert the given epoch time to whatever the local time is in that location. This requires being considerate of both the 
+            users current location (or what their browser date/time reports), their offset from UTC, and then the time zone offset of the selected location, then passing the final value in milliseconds to the outermost date object.
+            All of this was needed for both displaying the time for various things on the page, and for the initial process of iterating through the response array list, in order to 
+            populate the "followingDays" object on each API query.
             <br><br>
-            Figuring out the conditional day/night styling on each render/load was harder than expected. <br> The solution: Each time a location is selected, starting with the default, which is the users current approximate location,
-            there is a check that sets a boolean true or false depending on the time of day there. If the current time is after sunrise but before sunset, the useState boolean is set to true,
-            whose value is also passed to the app.tsx file. If it's set to true true, then the regular day theme styling is set, otherwise the night theme and background is set for that location. I couldn't figure out how to conditionally 
-            import and apply css files with react, so instead I found a different solution. For both themes, I made regular javascript/tsx files that hold the associated css properties as large string literals, in constants. 
-            Those consts are imported into app.tsx and then based on the theme boolean value, are passed into the in-file style tag, as the first thing in the return statement 
-            for app.tsx. This seemed to have finally worked.
+            Figuring out the conditional day/night styling was harder than expected. <br> The solution: Each time a location is selected, a check occurs that sets a useState boolean to true or false depending on the time of day, which is then 
+            passed to App.tsx. If the current time is after sunrise but before sunset, the boolean is set to true and the day theme is used, otherwise the night time is used. I couldn't 
+            figure out how to conditionally import regular css files, so instead I found a different solution. For both themes, I took the contents of the css files and stored them in large string literals, in their own separate tsx files.
+            The constants from those files are both imported into app.tsx, and then only one at a time is applied conditionally in the style tags, within the app.tsx return statement.
             <br><br>
 
           </p>
