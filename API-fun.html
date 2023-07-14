@@ -72,11 +72,13 @@
               <div class="api-Box ps-3 pe-3 pt-1 pb-1 overflow-auto d-flex align-items-center justify-content-center" id="inspireMe-box">
                 <p class="user-select-none fs-5 text-center" id="quote-api-text" style="color:gray"> Press the button for an inspirational quote! Quotes provided from user SergeyWebPro on the <a href="https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373" target="_blank" style="text-decoration:none; color: white;" rel="noopener noreferrer">freeCodeCamp forum</a> </p> 
               </div>
-              <div class = "d-grid gap-2">
+              <div class = "d-grid gap-2 mb-2">
                 <button class="btn mt-3" id="quote-button" type="submit">Inspire Me</button>
               </div>
               <br>
-              <p style="font-size:1.1rem">This uses a regular fetch request wrapped in an async function, which ends up returning a large array from the endpoint. Each index contains a quote and its author. Every time the "Inspire Me" button is pressed, only one quote is displayed in the box through the use of a random number generator. A random index from the array is selected. </p>
+              <div style="background-color:rgba(115, 104, 126, 0.233); border-radius: 10px;" class="p-3 mb-5">
+                <p style="font-size:1.1rem">Under the hood: Regular fetch request wrapped in an async function. Returns a large array from the endpoint. Each index contains a quote and its author. Every time the "Inspire Me" button is pressed, only one quote is displayed in the box through the use of a random number generator. A random index from the array is selected. </p>
+              </div>
             </div>
             
             
@@ -86,11 +88,13 @@
               <div class="api-Box ps-3 pe-3 pt-1 pb-1 overflow-auto d-flex align-items-center justify-content-center" id="bored-box"">
                 <p class="user-select-none fs-5 text-center" id="bored-api-text" style="color:gray"> Press the button to generate a suggestion with the help of The Bored API! (www.boredapi.com) </p> 
               </div>
-              <div class = "d-grid gap-2">
+              <div class = "d-grid gap-2 mb-2">
                 <button class="btn mt-3" id="bored-button" type="submit">I'm Bored</button>
               </div>
               <br>
-              <p style="font-size:1.1rem">This API is free just like the other, and comes with plenty of useful suggestions. I did not wrap the fetch request in an async function here. While this prevents the use of using the "await" keyword, this does not seem to create any real performance issues or conflicts on the page in this case. </p>
+              <div style="background-color:rgba(115, 104, 126, 0.233); border-radius: 10px;" class="p-3 mb-5">
+                <p style="font-size:1.1rem">Under the hood: This API is free like the other, and comes with plenty of useful suggestions. I did not wrap the fetch request in an async function here. While this prevents the use of using the "await" keyword, this does not seem to create any real performance issues or conflicts on the page in this case. </p>
+              </div>
             </div>
             
           </div>
