@@ -7,6 +7,6 @@ I am open to suggestions and improvements.
 
 Current projects/web apps:
 
-1. React based Weather App (In progress)
+1. React-Typescript Weather App 
 2. "API fun" section. Connects to 2 different free API endpoints and offers inspirational quotes, and suggestions for when you are bored
 3. To-do list. Done with vanilla JavaScript.
