@@ -91,6 +91,13 @@ nav {
     border-width: 2px;
 }
 
+.toDo-Title, .todoItem{
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
 body {
     min-height:100vh;
     /* background: rgb(38,120,157); */
