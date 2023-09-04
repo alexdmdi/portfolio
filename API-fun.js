@@ -25,7 +25,7 @@ const quoteText = document.getElementById ('quote-api-text');
 quoteButton.addEventListener('click', () => {getQuote()})
 
 async function getQuote() {
-    const randomNum = Math.floor(Math.random() * 1644);  //1643 is total length of the response object array
+    const randomNum = Math.floor(Math.random() * 17);  //17 is total length of the response object array
     try {
         const response = await fetch('https://type.fit/api/quotes');
         const result = await response.json();
