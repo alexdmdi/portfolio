@@ -25,13 +25,22 @@ const quoteText = document.getElementById ('quote-api-text');
 quoteButton.addEventListener('click', () => {getQuote()})
 
 async function getQuote() {
-    const randomNum = Math.floor(Math.random() * 17);  //17 is total length of the response object array
+    const randomNum = Math.floor(Math.random() * 16);  //16 is total length of the response object array
     try {
         const response = await fetch('https://type.fit/api/quotes');
         const result = await response.json();
+        const responseAuthor = result[randomNum].author;
+        let author = 'Unknown';
+
+        if (responseAuthor !== null && responseAuthor !== '' && responseAuthor !== 'type.fit' ){
+            author = result[randomNum].author.replace(', type.fit', '');
+            console.log(`author is ${author}`);
+        }
+    
+        console.log(result);
         quoteText.setAttribute ('style', 'color: white;');
         quoteText.setAttribute ('class', 'fw-medium fs-5 text-center');
-        quoteText.innerText = ('"' + (result[randomNum].text) + '" - ' + (result[randomNum].author === null ? 'Unknown' : result[randomNum].author));
+        quoteText.innerText = ('"' + (result[randomNum].text) + '" - ' + author);
     } 
     catch (error) {
         console.error(error);
