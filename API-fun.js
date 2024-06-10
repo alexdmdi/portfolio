@@ -1,17 +1,18 @@
 "use strict";
     
 // gets reference to the button and paragraph elements
-const boredButton = document.getElementById ('bored-button');
-const boredText = document.getElementById('bored-api-text');
+const jokeButton = document.getElementById ('joke-button');
+const jokeText = document.getElementById('joke-api-text');
 
-boredButton.addEventListener('click', () => {
-    //send a GET request to bored api using fetch and promises
-    fetch('https://www.boredapi.com/api/activity')
+jokeButton.addEventListener('click', () => {
+    //send a GET request to the joke api using fetch and promises
+    fetch('https://official-joke-api.appspot.com/random_joke')
     .then(response => response.json())
     .then(data => {
-        boredText.setAttribute ('style', 'color:white;');
-        boredText.setAttribute ('class', 'fw-medium fs-4 text-center');
-        boredText.textContent = data.activity;
+        // console.log(`joke data response: ${data.setup} \n ${data.punchline}`)
+        jokeText.setAttribute ('style', 'color:white;');
+        jokeText.setAttribute ('class', 'fw-medium fs-5 text-center');
+        jokeText.textContent = `${data.setup} \n \n ${data.punchline}`;
     })
     .catch(error => console.error(error));
 });
