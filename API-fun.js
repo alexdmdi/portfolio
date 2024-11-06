@@ -28,20 +28,21 @@ quoteButton.addEventListener('click', () => {getQuote()})
 async function getQuote() {
     const randomNum = Math.floor(Math.random() * 16);  //16 is total length of the response object array
     try {
-        const response = await fetch('https://type.fit/api/quotes');
+        const response = await fetch('https://quoteslate.vercel.app/api/quotes/random');
         const result = await response.json();
-        const responseAuthor = result[randomNum].author;
-        let author = 'Unknown';
+        console.log(result);
+        console.log(`Quote is: ${result.quote} --- Author is ${result.author}`);
+        let quote = result.quote;
+        let responseAuthor = result.author;
 
-        if (responseAuthor !== null && responseAuthor !== '' && responseAuthor !== 'type.fit' ){
-            author = result[randomNum].author.replace(', type.fit', '');
-            console.log(`author is ${author}`);
+        if (responseAuthor == null || responseAuthor == '' ){
+            responseAuthor = 'unknown'
+            console.log(`author is unknown`);
         }
     
-        console.log(result);
         quoteText.setAttribute ('style', 'color: white;');
         quoteText.setAttribute ('class', 'fw-medium fs-5 text-center');
-        quoteText.innerText = ('"' + (result[randomNum].text) + '" - ' + author);
+        quoteText.innerText = ('"' + quote + '" - ' + responseAuthor);
     } 
     catch (error) {
         console.error(error);
