@@ -1,6 +1,6 @@
 ## About 
-This responsive site is built with HTML, CSS, JavaScript, and Bootstrap. 
-Currently using AWS to host it on www.alexdiamandi.com
+This responsive site was built from scratch and features some customized Bootstrap components.
+Currently hosted with AWS at: www.alexdiamandi.com
 
 <br>
 
@@ -8,5 +8,5 @@ Currently using AWS to host it on www.alexdiamandi.com
 
 1. React-Typescript Weather App 
 2. "API fun" section. Connects to 2 different free API endpoints that offer inspirational quotes, and jokes
-3. To-do list. Done with vanilla JavaScript
+3. To-do list: Saves list entries and checked state to local storage. Done with vanilla JavaScript
 4. Reddit Video Downloader (Chrome Extension)
