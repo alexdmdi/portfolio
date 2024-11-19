@@ -91,7 +91,7 @@
           <p class="mb-5 bg-dark p-3">
             This is a react-vite typescript project that fetches weather data from a free API (openweathermap.org). By default the page is set
             to the users location based on their approximate coordinates, which are fetched from ipapi (https://ipapi.co/json). 
-            The theme is set based on the set location, and if the sun is still up there.
+            The theme is set based on the set location, and whether or not the sun has set yet.
           </p>
 
           <p class = "fs-3 mb-2 text-info">
@@ -99,18 +99,18 @@
           </p>
           
           <ul class="mb-5 list-group list-group-flush">
-            <li class="list-group-item">-Common React hooks </li>
-            <li class="list-group-item">-Passing information throughout the react component hierarchy with props and functions</li>
-            <li class="list-group-item">-Conditional rendering and styling</li>
-            <li class="list-group-item">-Lazy loading with react suspense to optimize loading time</li>
-            <li class="list-group-item">-Typescript: setting up interfaces, defining types, etc </li>
-            <li class="list-group-item">-Async/await, fetch, promises</li>
-            <li class="list-group-item">-A lot of experience with native javascript Date objects and methods</li>
-            <li class="list-group-item">-Common javascript functions such as .map, .filter </li>
-            <li class="list-group-item">-Node package manager and certain packages such as 'date-and-time' </li>
-            <li class="list-group-item">-Environment Variables and testing/build configurations </li>
-            <li class="list-group-item">-Bootstrap and CSS </li>
-            <li class="list-group-item">-Parsing through and sorting data from API responses</li>
+            <li class="list-group-item">Common React hooks </li>
+            <li class="list-group-item">Passing information throughout the react component hierarchy with props and functions</li>
+            <li class="list-group-item">Conditional rendering and styling</li>
+            <li class="list-group-item">Lazy loading with react suspense to optimize loading time</li>
+            <li class="list-group-item">Typescript: setting up interfaces, defining types, etc </li>
+            <li class="list-group-item">Async/await, fetch, promises</li>
+            <li class="list-group-item">Native javascript Date objects and associated methods</li>
+            <li class="list-group-item">Common javascript functions such as .map, .filter </li>
+            <li class="list-group-item">Node package manager and certain packages such as 'date-and-time' </li>
+            <li class="list-group-item">Environment Variables and testing/build configurations </li>
+            <li class="list-group-item">Bootstrap and CSS </li>
+            <li class="list-group-item">Parsing and custom sorting through data from API responses</li>
           </ul>
 
           <p class = "fs-3 mb-0 text-info">
@@ -119,32 +119,37 @@
           <br>
           
           <p class="mb-5 bg-dark p-3">
-            I had countless challenges throughout this project that forced me to think analytically and research for hours. Here are three major challenges:
+            I had countless challenges throughout this project that forced me to think analytically and grow as I learned and researched. Here are three of the major challenges:
             <br><br>
-            Early on I had to consider which variation of the weather API to call, and how. This tied in with the search bar functionality. 
-            I used a large object list provided by openweathermap containing all the cities in the world, along with their associated country, ID, and coordinates. The file was big at first, so big that it caused lag, and 
-            long loading times for the page during development. I cut down the file size in half by removing some white space, and the coordinate data 
+            <b>1&rpar; </b>
+            Early on I had to consider which variation of the weather API to call, and how. The search bar functionality depended on this too.
+            I used a large object list provided by openweathermap containing all the cities in the world, along with their associated country, ID, and coordinates. 
+            <br><br> The file was big at first, so big that it caused lag, and long loading times for the page. I cut down the file size in half by removing white space, and the coordinate data 
             for each location. I further optimized the search bar component by having it load with react suspense. The search bar would still take a few seconds to be ready on initial 
-            load, but in the final build it was automatically optimized further to the point where it is now near instant. The search bar displays search results dynamically 
-            as the user types. When the user selects a location, the value is set and gets passed to other components. As for the API calls, I found a solution that conditionally 
-            builds a URL string to fetch and update both weather and forecast data, either with coordinates (occurs on page load/refresh), or through a unique location ID from the 
-            large locations object. At some point I was struggling with useEffect and ensuring that the right components update and re-render at the right time, in parallel, 
+            load, but in the final build it was automatically optimized further to the point where it is now near instant. 
+            <br><br> The search bar is supposed to display search results dynamically as the user types. When the user selects a location, the value is set and gets passed to other components. 
+            As for the API calls, I found a solution that conditionally builds a URL string to fetch and update both weather and forecast data, either with coordinates (occurs on page load/refresh), or 
+            through a unique location ID from the large locations object. At some point I was struggling with useEffect and ensuring that the right components update and re-render at the right time, in parallel, 
             but after some modifications and adding conditional logic, I solved the issue.
-            <br><br>
-            Another major challenge I had, was dealing with the raw response data, especially for the forecast data. Each response contains an array with 40 weather objects, that are not 
-            categorized by day. Each next array item represents forecast data 3 hours into the future after the previous. Each day has about 8 object array items which then need to be 
-            sorted into another object that has 5 nested objects in it, one for each of the following 5 days, and whose date values need to update dynamically. The date provided in 
-            each of the 40 list items, is either in the form of epoch time (seconds elapsed since epoch 1970 Jan 1 UTC+0), or in the form of a UTC date string, so this complicated things 
-            that much more. The response object does not have a constant pattern/format to it, otherwise I could have just always taken the first 8 array items for example, and push them to the object representing tomorrow, within the 
+            
+            <br><br><br><br>
+
+            <b>2&rpar; </b> Another major challenge: dealing with the raw response data, especially for the forecast data. <br> Each response contains an array with 40 weather objects, that are not 
+            categorized by day. Each following array item represents forecast data 3 hours forward in time, relative to the previous. Each day has about 8 array[Obj] items which needed to be 
+            sorted into another object containing 5 nested objects, one for each of the following 5 days, whose date values need to update dynamically. The date provided in 
+            any given item from the list of 40 items, is either in the form of epoch time (seconds elapsed since epoch 1970 Jan 1 UTC+0), or in the form of a UTC date string, so this complicated things that much more. 
+            <br><br>The response object does not have a constant pattern/format to it, otherwise I could have just always taken the first 8 array items for example, and push them to the object representing tomorrow, within the 
             followingDays object. Anyway, I had to figure out how to convert the given epoch time to whatever the local time is in that location. This requires being considerate of both the 
             users current location (or what their browser date/time reports), their offset from UTC, and then the time zone offset of the selected location, then passing the final value in milliseconds to the outermost date object.
             All of this was needed for both displaying the time for various things on the page, and for the initial process of iterating through the response array list, in order to 
             populate the "followingDays" object on each API query.
-            <br><br>
-            Figuring out the conditional day/night styling was harder than expected. <br> The solution: Each time a location is selected, a check occurs that sets a useState boolean to true or false depending on the time of day, which is then 
-            passed to App.tsx. If the current time is after sunrise but before sunset, the boolean is set to true and the day theme is used, otherwise the night time is used. I couldn't 
-            figure out how to conditionally import regular css files, so instead I found a different solution. For both themes, I took the contents of the css files and stored them in large string literals, in their own separate tsx files.
-            The constants from those files are both imported into app.tsx, and then only one at a time is applied conditionally in the style tags, within the app.tsx return statement.
+
+            <br><br><br><br>
+
+            <b>3&rpar; </b> Figuring out the conditional day / night styling was harder than expected. <br> My solution: Each time a location is selected, a check occurs that sets a useState boolean to true or false depending on the time of day, which is then 
+            passed to the main 'App.tsx' react file. If the current time is after sunrise, but before sunset, the boolean is set to true and the day theme is used, otherwise the night time is used. <br> I couldn't 
+            figure out how to conditionally import regular css files in the 'regular' way, so instead I came up with a different solution. For both themes, I took the contents of their respective css files and stored them as lengthy string literals in separate tsx files.
+            The constants from those files are both being imported into app.tsx, and then only one is applied at a time as part of the style tags, conditionally. This is located within the main return statement of 'App.tsx'.
             <br><br>
 
           </p>
