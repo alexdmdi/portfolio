@@ -53,14 +53,15 @@ nav {
     background-color:#1616169c
 }
 
+
 .list-group-item {
     color: white;
     border-color:black;
     background-color: rgba(49, 49, 49, 0.438);
 }
 
-#to-do-list-item {
-    background-color: rgb(139, 136, 182);
+.todoListItem {
+    background-color: rgb(124, 122, 161);
     color:rgb(0, 0, 0);
 }
 
@@ -91,7 +92,7 @@ nav {
     border-width: 2px;
 }
 
-.toDo-Title, .todoItem{
+.toDo-Title, .todoItemLabel{
     -webkit-user-select: none; /* Safari */        
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE10+/Edge */

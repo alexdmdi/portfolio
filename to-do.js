@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
         checkbox.checked = todoObj.isChecked;
   
         //set attributes for label, and sets strikethrough styling based on whether or not the listItem is set to checked (through setting the class name for bootstrap styling)
-        label.setAttribute('class', 'form-check-label flex-grow-1 todoItem');
+        label.setAttribute('class', 'form-check-label flex-grow-1 todoItemLabel');
         if (checkbox.checked == true){
           label.classList.toggle('text-decoration-line-through');
         }
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         closeButton.setAttribute('aria-label', 'Close');
   
         //set attributes for list item
-        listItem.setAttribute('class', 'list-group-item list-group-item-action d-flex list-group-item-secondary');
+        listItem.setAttribute('class', 'todoListItem list-group-item list-group-item-action d-flex list-group-item-secondary');
         listItem.setAttribute('id',todoObj.id);
         listItem.appendChild(checkbox);    //adds checkbox element within the list item
         listItem.appendChild(label);       //adds label element within the list item
