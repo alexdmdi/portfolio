@@ -1,5 +1,5 @@
 ## About 
-This responsive site was built from scratch and features some customized Bootstrap components.
+This responsive site was built from scratch and features some customized Bootstrap components. \
 Currently hosted with AWS at: www.alexdiamandi.com
 
 <br>
