@@ -6,8 +6,9 @@ Currently hosted with AWS at: www.alexdiamandi.com
 
 ## Current projects/web apps:
 
-1. React-Typescript Weather App
-2. The portfolio itself
-3. Reddit Video Downloader (Chrome Extension)
-4. To-do list: Save and load list entries from local storage.
-5. "API fun" page. Connects to 2 different free API endpoints that offer inspirational quotes, and jokes
+* The portfolio itself 
+* Group Watch - MERN Full Stack Web App 
+* React-Typescript Weather App
+* Reddit Video Downloader (Chrome Extension)
+* To-do list: Save and load list entries from local storage.
+* "API fun" page. Connects to 2 different free API endpoints that offer inspirational quotes, and jokes
