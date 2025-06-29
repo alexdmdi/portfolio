@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const todoIndex = todos.findIndex(todo => todo.id === todoId)  //searches through the todos array to find the index of the given todo object, based on the id property 
       if (todoIndex === -1) return;                  //if no matching to do found, exit
       
-      if (target.tagName === 'INPUT') {              //reminder: even if the original tag name is/contains lowercase, when referring to the tagName it should be in all uppercase
+      if (target.tagName === 'INPUT') {              //reminder: even if the original tag name is/contains lowercase, when referring to a tagName it should be in all uppercase
         // input was clicked, toggle the strikethrough on label and toggle checkbox
         const label = target.nextElementSibling;
         label.classList.toggle('text-decoration-line-through');
