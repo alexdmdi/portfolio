@@ -39,12 +39,15 @@ nav {
     color: white;
     background-color: rgba(27, 27, 27, 0.39); 
     transition: 0.2s;
+    border-width: 2px !important;
+    border-color:rgb(36, 36, 36) !important;
 }
 
 .card:hover {
     background-color: rgba(54, 54, 54, 0.334); 
     border-color: transparent;
 }
+
 
 .githubLink:hover {
     color:red !important;
