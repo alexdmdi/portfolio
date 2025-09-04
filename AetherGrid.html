@@ -1,40 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal page and portfolio">
-    <meta property="og:image" itemprop="image" content="/images/site_preview_image.png">
-    <meta property="og:type" content="website">
-    <meta name = "msapplication-TileImage" content="/images/site_preview_image.png">
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <title>Portfolio</title>
-    
-    <!--Bootstrap CDN links for CSS and JS-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Personal page and portfolio" />
+  <meta property="og:image" itemprop="image" content="/images/site_preview_image.png" />
+  <meta property="og:type" content="website" />
+  <meta name="msapplication-TileImage" content="/images/site_preview_image.png" />
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+  <title>Portfolio</title>
 
-    <script defer src="https://kit.fontawesome.com/af70293d5a.js" crossorigin="anonymous"></script>
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <!--Bootstrap CDN links for CSS and JS-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="index.js"></script> <!--defer ensures that the javascript runs once the page is done loading. This is the best way of doing it.-->
-    <!-- <link rel="stylesheet" href="bootstrap-breakpoints.css"> -->
-    
+  <script defer src="https://kit.fontawesome.com/af70293d5a.js" crossorigin="anonymous"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="index.js"></script>
+  <!--defer ensures that the javascript runs once the page is done loading. This is the best way of doing it.-->
+  <!-- <link rel="stylesheet" href="bootstrap-breakpoints.css"> -->
 </head>
 
-
-<body class="text-white">  
-  
+<body class="text-white">
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-black mb-4">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">alexdiamandi.com</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        
+
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto me-5">
             <li class="nav-item">
@@ -58,29 +61,236 @@
             <li class="nav-item">
               <a class="nav-link" href="hobbies.html">Hobbies</a>
             </li>
-            
           </ul>
         </div>
       </div>
     </nav>
   </header>
- 
-  <br>
 
   <main>
-    <div class="container">
-        <div style="min-height:200px;"></div>
-        <h1 style="text-align:center;"> In progress </h1>
+    <div class="container py-3">
+      <!-- Hero -->
+      <section class="text-center mb-5">
+        <a href="https://www.aethergrid.app" target="_blank" rel="noopener" class="text-decoration-none">
+          <h1 class="display-3 fw-bold text-light">AetherGrid</h1>
+        </a>
+        <p class="lead text-light">
+          A borderless, transparent, customizable desktop icon grid for Windows (x64 and arm64).
+        </p>
+        <hr class="border-secondary opacity-50" />
+      </section>
+
+      <section class="row mb-5 justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8 d-flex justify-content-center">
+          <video autoplay loop muted class="img-fluid rounded shadow"
+            src="images/AetherGrid/Purple_BeforeAndAfter_Vid.mp4">
+          </video>
+        </div>
+      </section>
+
+      <section class="mb-5">
+        <section class="mb-5">
+          <h2 class="h3 mb-3 text-light">Website & Download Page:</h2>
+          <div class="p-3 rounded-3 border border-secondary-subtle bg-dark bg-opacity-50 d-flex align-items-center gap-3">
+             <a href="https://www.AetherGrid.app" class="text-decoration-none text-info fs-5" target="_blank" rel="noopener">AetherGrid.app</a>
+          </div>
+          
+        </section>
+
+        <section class="mb-5">
+          <h2 class="h3 mb-3 text-light">Tech Stack</h2>
+
+          <div class="row gy-4">
+            <!-- Left: Application Tech & Tool Stack -->
+            <div class="col-12 col-lg-6">
+              <div class="mb-3">
+                <span class="d-inline-block px-3 py-2 rounded-3 border border-info text-info fw-semibold">Application
+                  Tech &amp; Tool Stack</span>
+              </div>
+
+              <div class="d-grid gap-3">
+                <div
+                  class="p-3 rounded-3 border border-secondary-subtle bg-dark bg-opacity-50 d-flex align-items-center gap-3">
+                  <iconify-icon icon="mdi:language-csharp" class="text-info" width="24" height="24"></iconify-icon>
+                  <span class="fs-5">C#</span>
+                </div>
+
+                <div
+                  class="p-3 rounded-3 border border-secondary-subtle bg-dark bg-opacity-50 d-flex align-items-center gap-3">
+                  <iconify-icon icon="mdi:dot-net" class="text-primary" width="24" height="24"></iconify-icon>
+                  <span class="fs-5">.NET 8.0</span>
+                </div>
+
+                <div
+                  class="p-3 rounded-3 border border-secondary-subtle bg-dark bg-opacity-50 d-flex align-items-center gap-3">
+                  <iconify-icon icon="mdi:microsoft-windows" class="text-info" width="24" height="24"></iconify-icon>
+                  <span class="fs-5">WPF UI Framework for Windows Apps</span>
+                </div>
+
+                <div
+                  class="p-3 rounded-3 border border-secondary-subtle bg-dark bg-opacity-50 d-flex align-items-center gap-3">
+                  <iconify-icon icon="logos:visual-studio" width="24" height="24"></iconify-icon>
+                  <span class="fs-5">Visual Studio 2022</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Website Tech Stack -->
+            <div class="col-12 col-lg-6">
+              <div class="mb-3">
+                <span class="d-inline-block px-3 py-2 rounded-3 border border-info text-info fw-semibold">Website Tech
+                  Stack</span>
+              </div>
+
+              <div class="d-grid gap-3">
+                <div
+                  class="p-3 rounded-3 border border-secondary-subtle bg-dark bg-opacity-50 d-flex align-items-center gap-3">
+                  <iconify-icon icon="logos:react" width="24" height="24"></iconify-icon>
+                  <span class="fs-5">React</span>
+                </div>
+
+                <div
+                  class="p-3 rounded-3 border border-secondary-subtle bg-dark bg-opacity-50 d-flex align-items-center gap-3">
+                  <iconify-icon icon="logos:typescript-icon" width="24" height="24"></iconify-icon>
+                  <span class="fs-5">TypeScript</span>
+                </div>
+
+                <div
+                  class="p-3 rounded-3 border border-secondary-subtle bg-dark bg-opacity-50 d-flex align-items-center gap-3">
+                  <iconify-icon icon="logos:tailwindcss-icon" width="24" height="24"></iconify-icon>
+                  <span class="fs-5">Tailwind CSS</span>
+                </div>
+
+                <div
+                  class="p-3 rounded-3 border border-secondary-subtle bg-dark bg-opacity-50 d-flex align-items-center gap-3">
+                  <iconify-icon icon="simple-icons:cloudflare" class="text-warning" width="24"
+                    height="24"></iconify-icon>
+                  <span class="fs-5">Cloudflare Pages for Deployment</span>
+                </div>
+
+                <!-- <div
+                  class="p-3 rounded-3 border border-secondary-subtle bg-dark bg-opacity-50 d-flex align-items-center gap-3">
+                  <iconify-icon icon="logos:visual-studio-code" width="24" height="24"></iconify-icon>
+                  <span class="fs-5">Visual Studio Code</span>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Overview -->
+        <section class="mb-5">
+          <h2 class="h3 mb-3">App Features</h2>
+          <div class="bg-dark bg-opacity-50 border border-secondary-subtle p-4 rounded-3">
+            <ul class="mb-0">
+              <li class="mb-2">
+                <span class="fw-semibold">AetherGrid:</span> AetherGrid is a
+                customizable, borderless, and transparent desktop icon grid
+                application for Windows. It provides a clean way to organize and
+                access files, shortcuts, and folders within resizable and
+                paginated sections, letting you fit more on your desktop while
+                reducing clutter.
+              </li>
+              <li class="mb-2">
+                <span class="fw-semibold">Seamless Desktop Integration:</span>
+                The default configuration is designed to feel like a part of
+                your desktop, remaining behind all other applications and
+                seamlessly blending with regular desktop icons. You can make
+                AetherGrid align with your preferences by customizing icon
+                hover/select colors, icon spacing, icon size, and more.
+              </li>
+              <li class="mb-2">
+                <span class="fw-semibold">Multiple Grids per desktop:</span>
+                Enable multiple independent desktop grids, each with its own
+                folder, layout, and appearance. Each grid is managed centrally
+                from a single Settings window.
+              </li>
+              <li class="mb-2">
+                <span class="fw-semibold">Set and Forget:</span> For each
+                enabled grid, select any folder on your computer to act as the
+                source folder. Any items in that folder will be reflected in the
+                generated grid. Changes to a selected source folder will be
+                reflected upon restarting the app. Once you have configured and
+                customized your grids, enable the “Start with Windows” feature
+                for AetherGrid to automatically run on startup.
+              </li>
+              <li>
+                <span class="fw-semibold">Overlay Mode:</span> When enabled,
+                Overlay Mode results in a widget-like behavior for the selected
+                grid, keeping it on top of all non-full screen applications.
+                This provides a quick access area similar to the taskbar to
+                enhance your workflow.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+
+        <!-- Detailed Challenges -->
+        <section class="mb-5">
+          <h2 class="h3 mb-3">Challenges Behind AetherGrid</h2>
+          <div class="bg-dark bg-opacity-50 border border-secondary-subtle p-4 rounded-3">
+            <ul class="mb-0">
+              <li class="mb-2">
+                Correctly extracting and caching icons while considering many edge cases and 20+ file/shortcut types
+              </li>
+              <li class="mb-2">
+                Dynamically rendering icons in grids from the created cache based on icon size and more
+              </li>
+              <li class="mb-2">
+                Designing the core behavior that handles auto page creation/deletion, and icon placement upon resizing
+                grids
+              </li>
+              <li class="mb-2">
+                Reverse-engineering the original Windows 10 and 11 RGBA color values used for hover/select on desktop
+                icons (Simply measuring them directly isn’t enough)
+              </li>
+              <li class="mb-2">
+                Measuring and recreating pixel-perfect (or extremely close) default values for icon size, spacing, and
+                more as part of the intent to make the grids blend in
+              </li>
+              <li class="mb-2">
+                Creating a visually polished and fully functional user interface to manage grids (the settings window)
+              </li>
+              <li class="mb-2">
+                Considering countless UI/UX design choices so new users don't feel lost or overwhelmed
+              </li>
+              <li class="mb-2">
+                Making sure settings are saved and read on startup (And providing the option to make AetherGrid run on
+                startup)
+              </li>
+              <li class="mb-2">
+                Automatically detecting changes to items within source folders and updating the cache/grids as needed
+                (Was a file, shortcut, or folder added/renamed/removed?)
+              </li>
+              <li class="mb-2">
+                Discovering, analyzing, and handling as many exceptions and edge cases as possible through user-friendly
+                dialogs, rather than allowing the app to crash
+              </li>
+              <li class="mb-2">
+                Optimizing CPU and RAM usage, and ensuring no memory leaks
+              </li>
+              <li class="mb-2">
+                Spending an entire day on designing a logo/icon from scratch, then converting it to .ico and integrating
+                it into the project
+              </li>
+              <li class="mb-2">
+                Configuring lengthy and complex IDE and project settings for debugging/building
+              </li>
+              <li class="mb-2">
+                Creating polished Windows .exe installers for both x64 and arm64 that also create uninstallers found in
+                the Control Panel (and they must clean up registry values and leftover folders/settings)
+              </li>
+              <li class="mb-2">
+                And much more...
+            </ul>
+          </div>
+        </section>
 
     </div>
-
-
   </main>
-    
-    
+
   <footer class="mt-5 p-3 text-center"></footer>
-    
 </body>
 
 </html>
-
